@@ -1,11 +1,12 @@
 import React from 'react';
+import { Map } from 'immutable';
 import { Header, mapDispatchToProps, mapStateToProps } from '../../../layout/components/Header';
 import { shallow, render, mount } from 'enzyme';
 
 describe('mapStateToProps', () => {
   it('should map state to isMenuOpen value', ()=> {
     const state = {
-      layout: { isMenuOpen: true, sample: 'test'}
+      layout: Map({ isMenuOpen: true, sample: 'test'})
     }
     const props = mapStateToProps(state);
     expect(props).toEqual({ isMenuOpen: true})

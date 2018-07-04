@@ -57,7 +57,7 @@ export class Header extends Component {
 
 export const mapStateToProps = ({ layout }) => {
   return {
-    isMenuOpen: layout.isMenuOpen
+    isMenuOpen: layout.get('isMenuOpen')
   }
 }
 

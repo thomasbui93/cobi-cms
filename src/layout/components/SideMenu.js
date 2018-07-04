@@ -19,8 +19,8 @@ import { toggleSideBar } from './../actions/layout'
 export class SideMenu extends Component {
   static propTypes = {
     isMenuOpen: PropTypes.bool.isRequired,
+    hideSideBar: PropTypes.func.isRequired,
     openSideBar: PropTypes.func.isRequired,
-    showSidebar: PropTypes.func.isRequired,
   }
   render() {
     return (
@@ -66,7 +66,7 @@ export class SideMenu extends Component {
 
 const mapStateToProps = ({ layout }) => {
   return {
-    isMenuOpen: layout.isMenuOpen
+    isMenuOpen: layout.get('isMenuOpen')
   }
 }
 
