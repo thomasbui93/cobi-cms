@@ -9,8 +9,8 @@ import { connect } from 'react-redux'
 import { Dispatch } from 'redux'
 
 import { LOGOUT, TITLE } from '../../services/constants'
-import { IRootState } from './../../types/RootState'
-import { toggleSideBar } from './../actions/layout'
+import { IRootState } from '../../types/RootState'
+import { toggleSideBar } from '../actions/layout'
 
 interface IHeaderProps {
     isMenuOpen: boolean,
