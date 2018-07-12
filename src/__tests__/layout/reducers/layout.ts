@@ -1,5 +1,5 @@
 import { Map } from 'immutable'
-import { LAYOUT_SIDEBAR_TOGGLE } from '../../../layout/constants/layout'
+import { LAYOUT_SIDEBAR_TOGGLE } from '../../../constants/layout'
 import reducers from '../../../layout/reducers/layout'
 
 describe('layout reducers', () => {

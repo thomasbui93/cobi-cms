@@ -1,6 +1,6 @@
 import { Map } from 'immutable'
-import { LAYOUT_SIDEBAR_TOGGLE } from '../constants/layout'
 import { ILayoutAction } from '../types/ILayoutAction'
+import { LAYOUT_SIDEBAR_TOGGLE } from './../../constants/layout'
 
 export const initialState = Map({
     isMenuOpen: false
