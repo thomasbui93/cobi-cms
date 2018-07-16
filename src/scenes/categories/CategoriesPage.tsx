@@ -1,11 +1,13 @@
 import * as React from 'react'
-import { CATEGORIES_DESCRIPTION, CATEGORIES_META, CATEGORIES_TITLE } from '../../constants/page-title'
-import { PageHeader } from '../../core/components/PageHeader/Component'
 
-export const CategoriesPage = () => (
-    <div className="categories-page">
-        <PageHeader title={CATEGORIES_TITLE} 
-            description={CATEGORIES_DESCRIPTION}
-            meta={CATEGORIES_META} />
-    </div>
-)
+import { PageHeader } from '../../core/meta/PageHeader'
+import { TITLE, DESCRIPTION, META } from '../../sectors/categories/constants/meta'
+import CategoryList from '../../sectors/categories/components/CategoryList/Component'
+
+export const CategoriesPage = () => (<div>
+    <PageHeader title={TITLE}
+        description={DESCRIPTION}
+        meta={META}
+    />
+    <CategoryList />
+</div>)

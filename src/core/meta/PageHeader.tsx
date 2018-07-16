@@ -2,7 +2,17 @@ import Typography from '@material-ui/core/Typography'
 import * as React from 'react'
 import { Helmet } from 'react-helmet'
 
-import { InterfacePageHeaderProps } from './types'
+export interface InterfacePageHeaderProps {
+    title: string,
+    description: string,
+    meta: InterfacePageMeta,
+    classes?: string | string[]
+}
+
+export interface InterfacePageMeta {
+    title: string,
+    description: string
+}
 
 export class PageHeader extends React.Component<InterfacePageHeaderProps> {
     public render() {

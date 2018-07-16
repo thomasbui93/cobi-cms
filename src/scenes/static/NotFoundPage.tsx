@@ -1,7 +1,5 @@
 import * as React from 'react'
 
-export default () => (
-    <div className="not-found-page">
-        Not Found Page
-    </div>
-)
+export const NotFoundPage = () => (<div>
+    Not Found Page
+</div>)

@@ -1,9 +1,9 @@
 import { routerReducer } from 'react-router-redux'
 import { combineReducers } from 'redux'
 
-import layoutReducer from './layout/reducers/layout';
+import categoryList from './sectors/categories/reducers/categories' 
 
 export default combineReducers({
-    layout: layoutReducer,
-    router: routerReducer
+    router: routerReducer,
+    categoryList,
 })
