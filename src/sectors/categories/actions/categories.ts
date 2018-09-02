@@ -15,7 +15,7 @@ export const requestCategories = (requestInfo?: IRequestInfo) => {
 
 export const doneUpdatingCategories = createAction(
     action.DONE_UPDATING_CATEGORIES,
-    (categories: ICategoryItem[]) => categories
+    (items: ICategoryItem[]) => items
 )
 
 export const failUpdatingCategories = createAction(

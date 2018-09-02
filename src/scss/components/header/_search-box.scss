@@ -1,0 +1,90 @@
+.search-box {
+    &__container {
+        position: relative;
+        width: 100%;
+    }
+
+    &__input {
+        width: 100%; 
+    }
+
+    input {
+        background: transparent;
+        color: white;
+        text-transform: uppercase;
+        line-height: 2rem;
+        width: 100%;
+        box-shadow: none;
+        border: none;
+        font-size: 1rem;
+        padding: 5px;
+
+        &:focus,
+        &:active {
+            outline: none;
+            border: none;
+            box-shadow: none;
+        }
+    }
+
+    ::-webkit-input-placeholder {
+        color: white;
+    }
+    ::-moz-placeholder {
+        color: white;
+    }
+    :-ms-input-placeholder {
+        color: white;
+    }
+    :-moz-placeholder {
+        color: white;
+    }
+
+    &__autocomplete {
+       width: 100%;
+       background: white;
+       box-shadow: 0 1px 2px rgba(0,0,0,0.16), 0 1px 2px rgba(0,0,0,0.23); 
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: row;
+        padding: 0.5rem 0;
+        color: black;
+        border-bottom: 1px solid transparentize($color: #000000, $amount: 0.8);
+
+        &:hover {
+            background-color: $white-ter;
+        }
+    }
+
+    &__thumbnail {
+        position: relative;
+        height: 75px;
+        width: 75px;
+        margin: 0 0.5rem;
+    }
+
+    &__submit {
+        width: 100%;
+    }
+
+    &__title {
+        font-weight: bold;
+    }
+
+    &__description {
+        font-size: 0.85rem;
+    }
+}
+
+@include from($tablet) {
+    .search-box {
+        &__container {
+            position: absolute;
+            width: 300px;
+            right: 0;
+            top: 0;
+        }
+    }
+}

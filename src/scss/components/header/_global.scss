@@ -1,0 +1,40 @@
+.global-header {
+    background: #24292e;
+    .logo {
+        font-family: 'Pacifico', cursive;
+        font-size: 1.5rem;
+        color: white;
+    }
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+
+    &__item {
+        margin-right: 1rem;
+        font-weight: bold;
+    }
+
+    &__item a {
+        text-transform: uppercase;
+        color: white;
+    }
+}
+
+@include from($tablet) {
+    .global-header {
+        padding: 0.5rem;
+        display: flex;
+        align-items: center;
+
+        .logo-container {
+            position: absolute;
+            margin-left: 50%;
+            transform: translateX(-50%);
+        }
+        .logo {
+            font-size: 1.5rem;
+        }
+    }
+}

@@ -1,9 +1,10 @@
 import { ICategoriesState } from './state'
 import * as actionType from '../constants/actions'
+import { composeLoadingState, composeErrorState } from '../../../utils/state'
 
 const initialState: ICategoriesState = {
     isLoading: false,
-    categories: [],
+    items: [],
     error: false
 }
 
@@ -14,20 +15,12 @@ export default (state = initialState, { type, payload }: { type: string, payload
                 ...state,
                 error: false,
                 isLoading: false,
-                categories: payload.categories
+                items: payload.categories
             }
         case actionType.FAILED_UPDATING_CATEGORIES:
-            return {
-                ...state,
-                isLoading: false,
-                error: true
-            }
+            return composeErrorState(state)
         case actionType.REQUEST_CATEGORIES:
-            return {
-                ...state,
-                isLoading: true,
-                error: false,
-            }
+            return composeLoadingState(state)
         default:
             return state
     }

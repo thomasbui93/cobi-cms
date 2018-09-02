@@ -11,7 +11,7 @@ export function* watchFetchCategories() {
 export function* fetchCategories(actionData: Action<IRequestInfo>): any {
     try {
         const categories = yield call(fetchCategoriesApi, actionData.payload)
-        yield put({ type: action.DONE_UPDATING_CATEGORIES, payload: { categories: categories.data } })
+        yield put({ type: action.DONE_UPDATING_CATEGORIES, payload: { items: categories.data } })
     } catch (error) {
         yield put({ type: action.FAILED_UPDATING_CATEGORIES, payload: { error } })
     }

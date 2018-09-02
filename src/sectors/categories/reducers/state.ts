@@ -9,6 +9,6 @@ export interface ICategoryItem {
 
 export interface ICategoriesState {
     isLoading: boolean,
-    categories: ICategoryItem[],
+    items: ICategoryItem[],
     error: boolean
 }
