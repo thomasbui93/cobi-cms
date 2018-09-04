@@ -20,13 +20,15 @@ export class SearchBox extends React.Component<InterfaceSearchBoxComponentProps,
     }
 
     public state: InterfaceSearchBoxState = {
-        queryValue: ''
+        queryValue: '',
+        displayAutoCompleteBox: false
     }
 
     public constructor(props: InterfaceSearchBoxComponentProps) {
         super(props)
         this.queryAutocomplete = this.queryAutocomplete.bind(this)
         this.isEnableAutoComplete = this.isEnableAutoComplete.bind(this)
+        this.handleEscapeInteractions = this.handleEscapeInteractions.bind(this)
     }
 
     public queryAutocomplete(event: any) {
@@ -38,7 +40,19 @@ export class SearchBox extends React.Component<InterfaceSearchBoxComponentProps,
     }
 
     public isEnableAutoComplete():boolean {
-        return this.state.queryValue.length > 3
+        return this.state.queryValue.length >= 3 && this.state.displayAutoCompleteBox;
+    }
+
+    public handleEscapeInteractions(event: any) {
+        if(event.keyCode === 27 || typeof event.keyCode === 'undefined') {
+            this.setState({
+                displayAutoCompleteBox: false
+            })
+        } else {
+            this.setState({
+                displayAutoCompleteBox: true
+            })
+        }
     }
 
     public render() {
@@ -47,6 +61,8 @@ export class SearchBox extends React.Component<InterfaceSearchBoxComponentProps,
                 <div className='search-box__input'>
                     <input type='text'
                         value={this.state.queryValue}
+                        onKeyDown={this.handleEscapeInteractions}
+                        onBlur={this.handleEscapeInteractions}
                         onChange={this.queryAutocomplete}
                         placeholder='Enter your query' />
                 </div>

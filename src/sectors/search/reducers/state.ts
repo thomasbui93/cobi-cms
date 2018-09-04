@@ -20,5 +20,6 @@ export interface InterfaceSearchBoxPayload {
 }
 
 export interface InterfaceSearchBoxState {
-    queryValue: string
+    queryValue: string,
+    displayAutoCompleteBox: boolean
 }
