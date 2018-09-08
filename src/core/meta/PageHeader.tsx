@@ -14,9 +14,18 @@ export interface InterfacePageMeta {
 }
 
 export class PageHeader extends React.Component<InterfacePageHeaderProps> {
+    constructor(props: InterfacePageHeaderProps) {
+        super(props)
+        this.getClassName = this.getClassName.bind(this)
+    }
+    public getClassName():string {
+        return this.props.classes ? (
+            typeof this.props.classes === 'string' ? this.props.classes : this.props.classes.join(' ')
+        ) : ''
+    }
     public render() {
         return (
-            <div className={`page-header ${this.props.classes ? this.props.classes : '' }`}>
+            <div className={`page-header ${this.getClassName()}`}>
                 <h1 className='page-header__title'>
                     {this.props.title}
                 </h1>

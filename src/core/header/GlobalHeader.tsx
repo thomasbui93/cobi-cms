@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
-import SearchBox from '../../sectors/search/components/SearchBox';
+import SearchBox from '../../sectors/search/components/SearchBox'
+import {TITLE} from '../../services/constants'
 
 export interface InterfaceGlobalHeaderProps {
     threads: InterfaceMenuThread[],
@@ -27,7 +28,7 @@ export class GlobalHeader extends React.Component<InterfaceGlobalHeaderProps> {
                 </nav>
                 <nav className="level logo-container">
                     <div className="level-item has-text-centered">
-                        <span className="logo">Kobi</span>
+                        <span className="logo">{TITLE}</span>
                     </div>
                 </nav>
                 <div className="search-box__container">

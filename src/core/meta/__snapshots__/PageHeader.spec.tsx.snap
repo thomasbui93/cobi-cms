@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageHeader component renders correctly 1`] = `
+<div
+  className="page-header sample"
+>
+  <h1
+    className="page-header__title"
+  >
+    Home
+  </h1>
+  <p
+    className="page-header__description"
+  >
+    Home Page
+  </p>
+</div>
+`;
