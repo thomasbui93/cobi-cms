@@ -45,9 +45,12 @@ export class SearchBox extends React.Component<InterfaceSearchBoxComponentProps,
 
     public handleEscapeInteractions(event: any) {
         if(event.keyCode === 27 || typeof event.keyCode === 'undefined') {
-            this.setState({
-                displayAutoCompleteBox: false
-            })
+            setTimeout(() => {
+                this.setState({
+                    displayAutoCompleteBox: false
+                })
+            }, 100);
+            
         } else {
             this.setState({
                 displayAutoCompleteBox: true
@@ -57,18 +60,17 @@ export class SearchBox extends React.Component<InterfaceSearchBoxComponentProps,
 
     public render() {
         return (
-            <div className='search-box'>
+            <div className='search-box' onBlur={this.handleEscapeInteractions}>
                 <div className='search-box__input'>
                     <input type='text'
                         value={this.state.queryValue}
                         onKeyDown={this.handleEscapeInteractions}
-                        onBlur={this.handleEscapeInteractions}
                         onChange={this.queryAutocomplete}
                         placeholder='Enter your query' />
                 </div>
                 {
                     this.isEnableAutoComplete() ?
-                    <div className='search-box__autocomplete'>
+                    <div className='search-box__autocomplete' onClick={this.handleEscapeInteractions}>
                         {
                             this.props.isLoading ?
                                 <span>Loading...</span> :
@@ -78,7 +80,7 @@ export class SearchBox extends React.Component<InterfaceSearchBoxComponentProps,
                             this.state.queryValue.length !== 0 ?
                                 <Link to={`/search/${this.state.queryValue}`} className='button is-primary search-box__submit'>
                                     Search all content including {this.state.queryValue}
-                                </Link> : ''
+                                </Link> : <div> No result found.</div>
                         }
                     </div> : ''
                 }
